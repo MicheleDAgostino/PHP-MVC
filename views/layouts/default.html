@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVC</title>
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <?php
+                foreach($menu as $href => $anchorText){
+                    echo "<li><a href='$href'>$anchorText</a></li>";
+                }
+            ?>
+        </ul>
+    </nav>
+
+    <main>
+        {{page}}
+    </main>
+
+    <footer>
+        footer della pagina
+    </footer>
+
+</body>
+</html>
