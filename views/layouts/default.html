@@ -1,28 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MVC</title>
+    <link rel="stylesheet" href="/assets/output.css">
 </head>
 <body>
-    
-    <nav>
-        <ul>
-            <?php
-                foreach($menu as $href => $anchorText){
-                    echo "<li><a href='$href'>$anchorText</a></li>";
-                }
-            ?>
-        </ul>
+
+    <nav class="navbar">
+        <div class="flex-1">
+          <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+        </div>
+        <div class="flex-none">
+          <ul class="menu menu-horizontal px-1">
+            <li>
+              <details>
+                <summary>
+                  Parent
+                </summary>
+                <ul class="p-2 bg-base-100">
+                    <?php
+                        foreach($menu as $href => $anchorText){
+                            echo "<li><a href='$href'>$anchorText</a></li>";
+                        }
+                    ?>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        </div>
     </nav>
+    
+
 
     <main>
         {{page}}
     </main>
 
     <footer>
-        footer della pagina
+        
     </footer>
 
 </body>

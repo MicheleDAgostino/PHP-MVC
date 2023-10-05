@@ -19,14 +19,15 @@ class HomeController extends Controller {
         $items = $homeModel->find('home');
 
         $this->render('home', [
-            'message' => '',
             'form' => $this->getFormComponent(),
+            'message' => '',
             'homeitem' => $this->getHomeComponent($items)
         ]);
     }
 
     public function getFormComponent(){
-        $form = new Component('form');
+        $form = new Component('formcontatti');
+        $form->setItem([]);
         return $form;
     }
 

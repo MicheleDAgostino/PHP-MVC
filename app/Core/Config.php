@@ -13,7 +13,7 @@ class Config {
 
     public static function env($envFile){
         $envVars = file($envFile);
-
+        
         foreach($envVars as $envVar){
             putenv(trim($envVar));
         }
