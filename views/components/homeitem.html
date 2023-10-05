@@ -1,12 +1,21 @@
-<!-- <div>
-    <h3>{{titolo}}</h3>
-    <p>{{descrizione}}</p>
-</div> -->
-
-<div class="dropdown dropdown-end">
-    <label tabindex="0" class="btn m-1">Click</label>
-    <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-      <li><a>{{titolo}}</a></li>
-      <li><a>{{descrizione}}</a></li>
-    </ul>
-  </div>
+<tr>
+  <th>
+    <label>
+      <input type="checkbox" class="checkbox" />
+    </label>
+  </th>
+  <td>
+    <div class="flex items-center space-x-3">
+      <div>
+        <div class="font-bold">{{titolo}}</div>
+      </div>
+    </div>
+  </td>
+  <td>
+    {{descrizione}}
+  </td>
+  <td>Purple</td>
+  <th>
+    <button class="btn btn-ghost btn-xs">details</button>
+  </th>
+</tr>

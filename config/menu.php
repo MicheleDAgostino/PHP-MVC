@@ -1,5 +1,6 @@
 <?php
 
 return [
-    '/' => 'Home'
+    '/' => 'Home',
+    '/add-to-list' => 'Add action'
 ];

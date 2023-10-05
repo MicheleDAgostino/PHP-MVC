@@ -1,16 +1,18 @@
 <?php
 use \App\Controller\HomeController;
 use \App\Controller\ComingSoonController;
+use \App\Controller\AddToListController;
 
 return [
 
     'get' => [
         '/' => [HomeController::class, 'index'],
-        '/coming-soon' => [ComingSoonController::class, 'index']
+        '/coming-soon' => [ComingSoonController::class, 'index'],
+        '/add-to-list' => [AddToListController::class, 'index']
     ],
 
     'post' => [
-        '/' => [HomeController::class, 'submit']
+        '/add-to-list' => [AddToListController::class, 'submit']
     ],
 
 ];

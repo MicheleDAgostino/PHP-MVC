@@ -4,7 +4,6 @@ use \App\Core\Controller;
 use \App\Core\Component;
 use \App\Core\Mvc;
 use \App\Model\HomeModel;
-use \App\Model\ContattiModel;
 
 class HomeController extends Controller {
 
@@ -16,19 +15,11 @@ class HomeController extends Controller {
     public function index(){
 
         $homeModel = new HomeModel($this->mvc->pdo);
-        $items = $homeModel->find('home');
+        $items = $homeModel->find('tasks');
 
         $this->render('home', [
-            'form' => $this->getFormComponent(),
-            'message' => '',
             'homeitem' => $this->getHomeComponent($items)
         ]);
-    }
-
-    public function getFormComponent(){
-        $form = new Component('formcontatti');
-        $form->setItem([]);
-        return $form;
     }
 
     private function getHomeComponent($items){
@@ -37,24 +28,6 @@ class HomeController extends Controller {
         return $homeComponent;
     }
 
-    public function submit(){
-        $this->render('home', [
-            'message' => $this->sendForm(),
-            'form' => $this->getFormComponent()
-        ]);
-    }
 
-    public function sendForm(){
-        $model = new ContattiModel($this->mvc->pdo);
-        $post = $this->mvc->request->getPost();
-
-        if ($model->checkForm($post)) {
-            $model->save('contatti', $post);
-            return 'Il messaggio è stato inviato!';
-        }
-
-        return 'Controllare la correttezza dei campi.';
-        
-    }
 
 }

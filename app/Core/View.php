@@ -18,7 +18,6 @@ class View {
         $pageContent = $this->renderContent($pageContent, $values);
         return $this->renderContent($layoutContent, [
             'page' => $pageContent,
-            'footer' => "Footer dell'applicazione"
         ]);
     }
 
