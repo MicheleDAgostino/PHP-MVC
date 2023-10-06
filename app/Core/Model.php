@@ -33,4 +33,12 @@ class Model {
         return $statement->execute();
     }
 
+    public function delete($table, $id){
+        $query = "DELETE FROM $table WHERE id = :id";
+        $statement = $this->pdo->prepare($query);
+        $statement->bindParam(':id', $id, \PDO::PARAM_INT);
+        return $statement->execute();
+    }
+
+
 }

@@ -1,9 +1,4 @@
 <tr>
-  <th>
-    <label>
-      <input type="checkbox" class="checkbox" />
-    </label>
-  </th>
   <td>
     <div class="flex items-center space-x-3">
       <div>
@@ -14,8 +9,11 @@
   <td>
     {{descrizione}}
   </td>
-  <td>Purple</td>
+  <td>{{data}}</td>
   <th>
-    <button class="btn btn-ghost btn-xs">details</button>
+    <form action="/delete-task" method="post">
+      <input type="hidden" name="id" value="{{id}}">
+      <button type="submit" class="btn btn-ghost btn-xs">Elimina</button>
+    </form>
   </th>
 </tr>

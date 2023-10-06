@@ -1,18 +1,20 @@
 <?php
 use \App\Controller\HomeController;
 use \App\Controller\ComingSoonController;
-use \App\Controller\AddToListController;
+use App\Controller\TasksController;
 
 return [
 
     'get' => [
         '/' => [HomeController::class, 'index'],
         '/coming-soon' => [ComingSoonController::class, 'index'],
-        '/add-to-list' => [AddToListController::class, 'index']
+        '/add-to-list' => [TasksController::class, 'index'],
+        
     ],
 
     'post' => [
-        '/add-to-list' => [AddToListController::class, 'submit']
+        '/add-to-list' => [TasksController::class, 'submit'],
+        '/delete-task' => [HomeController::class, 'deleteTask']
     ],
 
 ];

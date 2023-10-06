@@ -5,7 +5,7 @@ use \App\Core\Component;
 use \App\Core\Mvc;
 use \App\Model\TasksModel;
 
-class AddToListController extends Controller {
+class TasksController extends Controller {
     
     public function __construct(public Mvc $mvc)
     {
@@ -38,8 +38,6 @@ class AddToListController extends Controller {
         $post = $this->mvc->request->getPost();
         $model->save('tasks', $post);
         return 'Il messaggio è stato inviato!';
-        
-        
     }
     
     
