@@ -37,8 +37,8 @@ class TasksController extends Controller {
         $model = new TasksModel($this->mvc->pdo);
         $post = $this->mvc->request->getPost();
         $model->save('tasks', $post);
-        return 'Il messaggio è stato inviato!';
+        return 'Task inserito con successo!';
     }
-    
+
     
 }

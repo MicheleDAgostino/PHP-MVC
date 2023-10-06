@@ -10,37 +10,26 @@
 
     <nav class="navbar">
         <div class="flex-1">
-          <a class="btn btn-ghost normal-case text-xl">daisyUI</a>
+          <a class="btn btn-ghost normal-case text-xl">ToDoList</a>
         </div>
-        <div class="flex-none">
-          <ul class="menu menu-horizontal px-1">
-            <li>
-              <details>
-                <summary>
-                  Parent
-                </summary>
-                <ul class="p-2 bg-base-100">
-                    <?php
-                        foreach($menu as $href => $anchorText){
-                            echo "<li><a href='$href'>$anchorText</a></li>";
-                        }
-                    ?>
-                </ul>
-              </details>
-            </li>
+        <div class="dropdown dropdown-end">
+          <label tabindex="0" class="btn m-1">Menu</label>
+          <ul tabindex="0" class="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+            <?php
+                foreach($menu as $href => $anchorText){
+                    echo "<li><a href='$href'>$anchorText</a></li>";
+                }
+            ?>
           </ul>
         </div>
     </nav>
     
 
 
-    <main>
+    <main class="w-full flex flex-wrap justify-center items-center">
         {{page}}
     </main>
 
-    <footer>
-        
-    </footer>
 
 </body>
 </html>

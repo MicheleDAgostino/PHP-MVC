@@ -2,5 +2,5 @@
 
 return [
     '/' => 'Home',
-    '/add-to-list' => 'Add action'
+    '/add-to-list' => 'Aggiungi Task'
 ];
